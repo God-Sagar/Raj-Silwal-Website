@@ -180,8 +180,12 @@ a i {
 }
 
 
-
-
+/* Become A Member */
+.member{
+    text-decoration: none;
+    font-size: large;
+    color:blue;
+}
 
 /* About Me Section */
 .about {
