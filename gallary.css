@@ -84,8 +84,9 @@ body {
 
 .photo-frame {
     width: 100%;
-    height: 400px; /* Fixed height for uniformity */
+    /* Fixed height for uniformity */
     overflow: hidden;
+    aspect-ratio: 4 / 3;
     
 }
 
@@ -150,6 +151,7 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
 
 
 
