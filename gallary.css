@@ -90,10 +90,13 @@ body {
 }
 
 .photo-frame img {
+   .photo-frame img {
     width: 100%;
-    height: 60%;
-    object-fit: cover;
+    height: 100%;        /* Fill full frame */
+    object-fit: cover;   /* Crop but keep ratio */
+    display: block;      /* Remove extra spacing */
     transition: transform 0.5s ease;
+}
 }
 
 .photo-card:hover .photo-frame img {
@@ -147,6 +150,7 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
 
 
 
