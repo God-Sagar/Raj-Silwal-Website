@@ -86,7 +86,7 @@ body {
 
 .photo-frame {
     width: 100%;
-    height: 250px; /* Fixed height for uniformity */
+    height: 500px; /* Fixed height for uniformity */
     overflow: hidden;
 }
 
@@ -148,3 +148,4 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
