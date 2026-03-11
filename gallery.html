@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raj Silwal | Chairman - RSP Khairahani</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+       (function(){
+        emailjs.init({ publicKey: "Gx5SfLAFBShOT0-PG" });
+        })();
+    </script>
+
+    <style>
+        /* --- CSS VARIABLES (Easy to Edit) --- */
+        :root {
+            --primary-blue: #0A3273; 
+            --accent-red: #D32F2F;
+            --accent-gold: #f39c12;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* --- RESET & BASE --- */
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- NAVBAR --- */
+        .navbar {
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e5e7eb;
+            height: 70px;
+            display: flex; align-items: center;
+        }
+
+        .nav-container {
+            display: flex; justify-content: space-between; align-items: center; width: 100%;
+        }
+
+        .logo a {
+            font-size: 1.4rem; font-weight: 800; color: var(--primary-blue);
+            text-decoration: none; letter-spacing: -1px;
+        }
+
+        .nav-links {
+            display: flex; gap: 25px; align-items: center;
+        }
+
+        .navitem {
+            text-decoration: none; color: var(--text-muted);
+            font-weight: 500; font-size: 0.95rem; transition: var(--transition);
+        }
+
+        .navitem:hover { color: var(--primary-blue); }
+
+        .btn-member {
+            background: var(--accent-red); color: white;
+            padding: 8px 18px; border-radius: 5px; font-weight: 600;
+            text-decoration: none; transition: var(--transition);
+        }
+
+        .btn-member:hover { background: #b71c1c; transform: translateY(-2px); }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            padding: 140px 0 80px;
+            background: linear-gradient(135deg, #f0f4f8 0%, #ffffff 100%);
+        }
+
+        .hero-flex {
+            display: flex; align-items: center; gap: 50px;
+        }
+
+        .hero-content { flex: 1; }
+        .hero-image { flex: 1; text-align: center; position: relative; }
+
+        .hero-content h1 {
+            font-size: 3.5rem; color: var(--primary-blue); line-height: 1.1;
+            margin-bottom: 15px; font-weight: 800;
+        }
+
+        .hero-content h2 {
+            font-size: 1.5rem; color: var(--accent-red); margin-bottom: 20px;
+        }
+
+        .hero-image img {
+            max-width: 400px; width: 100%; border-radius: 20px;
+            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.1));
+        }
+
+        /* --- GALLERY GRID (Professional Framing) --- */
+        .section-header { text-align: center; margin-bottom: 50px; padding-top: 80px; }
+        .section-header h2 { font-size: 2.5rem; color: var(--primary-blue); }
+        .divider { height: 4px; width: 60px; background: var(--accent-gold); margin: 15px auto; }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .photo-card {
+            background: var(--white); border-radius: 12px; overflow: hidden;
+            box-shadow: var(--shadow); transition: var(--transition);
+            border: 1px solid #f1f5f9;
+        }
+
+        .photo-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.15); }
+
+        .photo-frame {
+            width: 100%;
+            aspect-ratio: 4 / 3; /* Uniform frame size */
+            overflow: hidden;
+            background: #eee;
+        }
+
+        .photo-frame img {
+            width: 100%; height: 100%; object-fit: cover; /* Professional crop */
+            transition: transform 0.6s ease;
+        }
+
+        .photo-card:hover img { transform: scale(1.1); }
+
+        .photo-card figcaption {
+            padding: 15px; text-align: center; font-weight: 600;
+            color: var(--primary-blue); border-top: 1px solid #f1f5f9;
+        }
+
+        /* --- BACK TO TOP BUTTON --- */
+        #backToTop {
+            position: fixed; bottom: 30px; right: 30px;
+            width: 50px; height: 50px; background: var(--primary-blue);
+            color: white; border: none; border-radius: 50%;
+            cursor: pointer; display: none; align-items: center;
+            justify-content: center; font-size: 1.2rem; z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: var(--transition);
+        }
+
+        #backToTop:hover { background: var(--accent-gold); transform: scale(1.1); }
+
+        /* --- FOOTER --- */
+        .footer {
+            background: var(--primary-blue); color: white;
+            padding: 60px 0 30px; text-align: center; margin-top: 100px;
+        }
+
+        .footer-brand h3 { font-size: 1.8rem; margin-bottom: 10px; }
+        .footer-socials { margin: 20px 0; display: flex; justify-content: center; gap: 15px; }
+        .footer-socials a {
+            color: white; font-size: 1.5rem; transition: var(--transition);
+        }
+        .footer-socials a:hover { color: var(--accent-gold); }
+
+        /* --- MOBILE RESPONSIVENESS --- */
+        @media (max-width: 992px) {
+            .hero-flex { flex-direction: column; text-align: center; }
+            .hero-content h1 { font-size: 2.5rem; }
+            .nav-links { display: none; } /* Simplified for this one-file demo */
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo"><a href="#">RAJ SILWAL</a></div>
+            <div class="nav-links">
+                <a href="index.html" class="navitem">Home</a>
+                <a href="gallery.html" class="navitem">Gallery</a>
+                <a href="https://rspnepal.org/membership" target="_blank" class="btn-member">Become a Member</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero" id="Home">
+        <div class="container hero-flex">
+            <div class="hero-content">
+                <h1>Leading with Integrity</h1>
+                <h2>Chairman, RSP-Khairahani</h2>
+                <p>Dedicated to transparent leadership and community-driven progress in Chitwan. Join our journey toward a better Nepal.</p>
+                <br>
+                <a href="#Gallery" class="btn-member" style="background: var(--primary-blue); padding: 12px 25px;">Explore Gallery</a>
+            </div>
+            <div class="hero-image">
+                <img src="photos/Raj Silwal PNG.png" alt="Raj Silwal">
+            </div>
+        </div>
+    </header>
+
+  <section class="container" id="Gallery">
+    <div class="section-header">
+        <h2>Photo Gallery</h2>
+        <p>Capturing moments of service and leadership.</p>
+        <div class="divider"></div>
+    </div>
+
+    <div class="gallery-grid">
+        <figure class="photo-card">
+            <div class="photo-frame"><img src="photos/Birthday%20special.jpg" alt="Birthday Special"></div>
+            <figcaption>Birthday Special</figcaption>
+        </figure>
+
+        <figure class="photo-card">
+            <div class="photo-frame"><img src="photos/Ravi.jpg" alt="With Ravi"></div>
+            <figcaption>With Ravi Lamichhane</figcaption>
+        </figure>
+
+        <figure class="photo-card">
+            <div class="photo-frame"><img src="photos/Khairahani%20team.jpg" alt="Team"></div>
+            <figcaption>With Khairahani Team</figcaption>
+        </figure>
+
+        <figure class="photo-card">
+            <div class="photo-frame"><img src="photos/family%20photo.jpg" alt="Family"></div>
+            <figcaption>With Family</figcaption>
+        </figure>
+
+        <figure class="photo-card">
+            <div class="photo-frame"><img src="photos/Maribir%20pun.jpg" alt="With Mahabir"></div>
+            <figcaption>With Mahabir Pun</figcaption>
+        </figure>
+
+        <figure class="photo-card">
+            <div class="photo-frame"><img src="photos/balen.jpg" alt="With Balen"></div>
+            <figcaption>With Balen Shah</figcaption>
+        </figure>
+
+        <figure class="photo-card">
+            <div class="photo-frame"><img src="photos/Swarnim%20wagle.jpg" alt="With Swarnim"></div>
+            <figcaption>With Dr. Swarnim Wagle</figcaption>
+        </figure>
+
+        <figure class="photo-card">
+            <div class="photo-frame"><img src="photos/Briksha%20ropan.jpg" alt="Tree planting"></div>
+            <figcaption>Tree Planting Program</figcaption>
+        </figure>
+
+        <figure class="photo-card">
+            <div class="photo-frame"><img src="photos/past.jpg" alt="Memories"></div>
+            <figcaption>Memories from India</figcaption>
+        </figure>
+
+        <figure class="photo-card">
+            <div class="photo-frame"><img src="photos/begining days in rsp.jpg" alt="Early Days"></div>
+            <figcaption>Early Days in RSP</figcaption>
+        </figure>
+
+        <figure class="photo-card">
+            <div class="photo-frame"><img src="photos/ramesh.jpeg" alt="With Ramesh"></div>
+            <figcaption>With Ramesh Upreti</figcaption>
+        </figure>
+
+        <figure class="photo-card">
+            <div class="photo-frame"><img src="photos/Hari and raj and other.jpeg" alt="With Hari"></div>
+            <figcaption>With Hari Dhakal</figcaption>
+        </figure>
+
+        <figure class="photo-card">
+            <div class="photo-frame"><img src="photos/hari dhakal and raj.jpeg" alt="Nomination"></div>
+            <figcaption>Nomination in 2079 Chitwan-1</figcaption>
+        </figure>
+
+        <figure class="photo-card">
+            <div class="photo-frame"><img src="photos/ravi, raj, dp.jpeg" alt="Program"></div>
+            <figcaption>First RSP-Khairahani Program</figcaption>
+        </figure>
+
+        <figure class="photo-card">
+            <div class="photo-frame"><img src="photos/Ravilami.jpeg" alt="Ravi and Raj"></div>
+            <figcaption>Ravi Lamichhane & Raj Silwal</figcaption>
+        </figure>
+
+        <figure class="photo-card">
+            <div class="photo-frame"><img src="photos/group photo khairhani.jpeg" alt="Campaign"></div>
+            <figcaption>Election Campaign</figcaption>
+        </figure>
+
+        <figure class="photo-card">
+            <div class="photo-frame"><img src="photos/chairman.jpg" alt="Chairpersons"></div>
+            <figcaption>Chitwan Chairpersons</figcaption>
+        </figure>
+
+        <figure class="photo-card">
+            <div class="photo-frame"><img src="photos/rajsilwal%20in%20half%20paint.jpeg" alt="Meeting"></div>
+            <figcaption>First District Meeting</figcaption>
+        </figure>
+
+        <figure class="photo-card">
+            <div class="photo-frame"><img src="photos/buwa.jpg" alt="Father"></div>
+            <figcaption>My Father</figcaption>
+        </figure>
+
+        <figure class="photo-card">
+            <div class="photo-frame"><img src="photos/balkr.jpg" alt="With Balkrishna"></div>
+            <figcaption>With Balkrishna Guru</figcaption>
+        </figure>
+
+        <figure class="photo-card">
+            <div class="photo-frame"><img src="photos/dp.jpg" alt="With DP"></div>
+            <figcaption>With DP Aryal</figcaption>
+        </figure>
+
+        <figure class="photo-card">
+            <div class="photo-frame"><img src="photos/abiyan.jpg" alt="Movement"></div>
+            <figcaption>Khairahani Movement</figcaption>
+        </figure>
+
+        <figure class="photo-card">
+            <div class="photo-frame"><img src="photos/brothers.jpg" alt="Family Moments"></div>
+            <figcaption>Family Moments</figcaption>
+        </figure>
+    </div>
+</section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-brand">
+                <h3>RAJ SILWAL</h3>
+                <p>Rastriya Swatantra Party | Khairahani, Chitwan</p>
+            </div>
+            <div class="footer-socials">
+                <a href="https://facebook.com/raj.silwal.9" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            </div>
+            <p>&copy; <span id="year"></span> Raj Silwal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button id="backToTop" title="Go to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // 1. Update Copyright Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // 2. Back to Top Logic
+        const topBtn = document.getElementById("backToTop");
+        
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                topBtn.style.display = "flex";
+            } else {
+                topBtn.style.display = "none";
+            }
+        };
+
+        topBtn.onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+
+        // 3. EmailJS Form Handling (Placeholder)
+        function sendmail(event) {
+            event.preventDefault();
+            // Your existing logic here
+        }
+    </script>
+</body>
+</html>
